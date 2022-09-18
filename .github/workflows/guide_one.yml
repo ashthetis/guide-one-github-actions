@@ -1,0 +1,26 @@
+name: GUIDE-ONE
+on: [push]
+jobs:
+
+  JOB-1:
+    runs-on: ubuntu-lastest
+    steps:
+      - run: echo "Hello World"
+      - run: echo " second actions within JOB-1" 
+      - run: |
+          pwd
+          ls
+  
+  
+  JOB-2:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Check out current repository
+        uses: actions/checkout@main
+      - run: echo " Checking out repository: ${{ github.repository }}" 
+      - run: |
+          pwd
+          ls
+      
+      
+    
